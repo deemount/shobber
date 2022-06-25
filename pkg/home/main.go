@@ -1,4 +1,4 @@
-package main
+package home
 
 import (
 	"net/http"
@@ -12,14 +12,7 @@ import (
 var tplDir string = "../../lib/ui/html"
 var home *view.View
 
-func main() {
-
-	http.HandleFunc("/", homeHandler)
-	http.ListenAndServe(":9090", nil)
-
-}
-
-func homeHandler(w http.ResponseWriter, r *http.Request) {
+func Handler(w http.ResponseWriter, r *http.Request) {
 
 	tmpls := []string{
 		tplDir + "/base.tmpl",
