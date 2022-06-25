@@ -15,7 +15,7 @@ var products *view.View
 func Handler(w http.ResponseWriter, r *http.Request) {
 
 	tmpls := []string{
-		tplDir + "/base.tmpl",
+		tplDir + "/products.tmpl",
 		tplDir + "/pages/products/header.tmpl",
 		tplDir + "/pages/products/main.tmpl",
 		tplDir + "/pages/products/footer.tmpl",
@@ -29,7 +29,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		NavBarLinks:     navbar.NavBar(),
 	}
 
-	products = view.NewView(tplDir, "base", tmpls)
+	products = view.NewView(tplDir, "products", tmpls)
 
 	err := products.RenderData(w, data)
 	if err != nil {
