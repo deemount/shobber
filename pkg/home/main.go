@@ -5,6 +5,7 @@ import (
 
 	"github.com/deemount/shobber-tpl/pkg/models"
 	"github.com/deemount/shobber-tpl/pkg/view"
+	"github.com/deemount/shobber/pkg/meta"
 	"github.com/deemount/shobber/pkg/navbar"
 )
 
@@ -31,6 +32,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 		PageTitle:       "Shobber:Home",
 		PageAuthor:      "Salvatore Gonda",
 		PageDescription: "A simple online shop platform",
+		OG:              meta.OpenGraph(),
 		NavBarLinks:     navbar.NavBar(),
 	}
 
